@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Twitch Chat Overlay</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/includes/styles.css">
+  </head>
+  <body>
+    <div id="container">
+      <ul id="chat-messages">
+        <script id="message" type="text/html">
+          <li class="chatline {{ type }}" style="color:{{ color }};">
+            <div>
+              {{#mod}}<img src="{{ mod_icon }}"{{#ffz}} style="background-color:#34ae0a;"{{/ffz}}>{{/mod}}
+              {{#subscriber}}<img src="{{ sub_icon }}">{{/subscriber}}
+              {{#turbo}}<img src="{{ turbo_icon }}">{{/turbo}}
+              {{#broadcaster}}<img src="{{ broadcaster_icon }}">{{/broadcaster}}
+              <span class="username"><b>{{ user }}</b></span>
+              <span class="message">{{{ message }}}</span>
+            </div>
+          </li>
+        </script>
+      </ul>
+    </div>
+
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.tmijs.org/js/1.1.2/tmi.min.js" integrity="sha384-GONdkSqsv77zHY1cs3aAZoQJP/9wq2YBmES4prk2ZG1rUvrv3IKLFRbHqk/0CR1b" crossorigin="anonymous"></script>
+    <script src="/bower_components/mustache.js/mustache.min.js"></script>
+    <script src="/bower_components/velocity/velocity.min.js"></script>
+    <script src="/bower_components/velocity/velocity.ui.min.js"></script>
+
+    <script src="/includes/chat.js"></script>
+  </body>
+</html>
