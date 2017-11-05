@@ -20,7 +20,8 @@ $(document).ready(function() {
           debug: true
       },
       connection: {
-          reconnect: true
+          reconnect: true,
+          secure: true
       },
       channels: ['#' + _CHANNEL]
   };
